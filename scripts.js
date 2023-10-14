@@ -3,6 +3,7 @@ const btnMostrar = document.querySelector("#btnMostrar")
 const btnOcultar = document.querySelector("#btnOcultar")
 const btnAlternar = document.querySelector("#btnAlternar")
 const btnAdd = document.querySelector("#btnAdd")
+const btnRemove = document.querySelector("#btnRemove")
 
 const textItemCompras = document.querySelector("#text-item-compras")
 
@@ -43,7 +44,17 @@ const divChange = (vis) => {
 }
 
 const addItem = () => {
-    containerAddList.innerHTML += `<p>textItemCompras.value</p>`
+    if (textItemCompras.value === "") {
+        alert("INFO:\nDigite um item para a compra")
+    } else {
+       containerAddList.innerHTML += `<p>${textItemCompras.value}</p>` 
+       textItemCompras.value = ''
+    }
+    
+}
+
+const removeItem = () => {
+    containerAddList.innerHTML = ""
 }
 
 
@@ -53,3 +64,4 @@ btnMostrar.addEventListener("click", () => divChange(1))
 btnOcultar.addEventListener("click",  () => divChange(2))
 btnAlternar.addEventListener("click", () => divChange(3))
 btnAdd.addEventListener("click", addItem)
+btnRemove.addEventListener("click", removeItem)
