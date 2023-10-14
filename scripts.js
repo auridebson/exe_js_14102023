@@ -7,6 +7,8 @@ const containerWinwidthRes = document.querySelector("#container-winwidth-resulta
 const containerButtonsManipulation = document.querySelector("#container-buttons-manipulation")
 const containerButtonsManipulationCtrl = document.querySelector("#container-buttons-manipulation")
 
+let divVisibility = false
+
 const mudaCor500 = () => {
     let winWidth = window.innerWidth
     if (window.innerWidth > 500) {
@@ -16,19 +18,31 @@ const mudaCor500 = () => {
     }
 }
 
-const divChange = (visible) => {
-
-    if (visible === false) {
-        containerButtonsManipulation.style.visibility = "visible"
-    } else if{
-        containerButtonsManipulation.style.visibility = "hidden"
+const divChange = (vis) => {
+    if (vis === 1) {
+        divVisibility = true
+        containerButtonsManipulation.style.visibility = "visible"    
+    } else
+    if (vis === 2) {
+        divVisibility = false
+        containerButtonsManipulation.style.visibility = "hidden" 
     }
+    if (vis === 3) {
+        if (divVisibility === true) {
+            divVisibility = !divVisibility
+            containerButtonsManipulation.style.visibility = "hidden" 
+        } else {
+            divVisibility = !divVisibility
+            containerButtonsManipulation.style.visibility = "visible" 
+        }
+
+    }
+
 }
 
 
 
-
 btnMudaCor.addEventListener("click", mudaCor500)
-btnMostrar.addEventListener("click", divChange(true))
-btnOcultar.addEventListener("click", divChange(false))
-btnAlternar.addEventListener("click", divChange)
+btnMostrar.addEventListener("click", () => divChange(1))
+btnOcultar.addEventListener("click",  () => divChange(2))
+btnAlternar.addEventListener("click", () => divChange(3))
