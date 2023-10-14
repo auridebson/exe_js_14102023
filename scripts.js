@@ -7,7 +7,7 @@ const containerWinwidthRes = document.querySelector("#container-winwidth-resulta
 const containerButtonsManipulation = document.querySelector("#container-buttons-manipulation")
 const containerButtonsManipulationCtrl = document.querySelector("#container-buttons-manipulation")
 
-let divVisibility = false
+let divVisibility = false 
 
 const mudaCor500 = () => {
     let winWidth = window.innerWidth
