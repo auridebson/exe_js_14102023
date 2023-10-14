@@ -1,0 +1,13 @@
+* {
+    padding: 0;
+    border: 0;
+    font-family: Verdana;
+}
+
+.container-cabecalho {
+    background-color: #ff4400a4;
+    border-radius: 6px;
+    align-items: center;
+    text-align: center;
+}
+
