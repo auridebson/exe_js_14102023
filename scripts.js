@@ -2,10 +2,14 @@ const btnMudaCor = document.querySelector("#btnMudaCor")
 const btnMostrar = document.querySelector("#btnMostrar")
 const btnOcultar = document.querySelector("#btnOcultar")
 const btnAlternar = document.querySelector("#btnAlternar")
+const btnAdd = document.querySelector("#btnAdd")
+
+const textItemCompras = document.querySelector("#text-item-compras")
 
 const containerWinwidthRes = document.querySelector("#container-winwidth-resultado")
 const containerButtonsManipulation = document.querySelector("#container-buttons-manipulation")
 const containerButtonsManipulationCtrl = document.querySelector("#container-buttons-manipulation")
+const containerAddList = document.querySelector("#container-add-list")
 
 let divVisibility = false 
 
@@ -35,9 +39,11 @@ const divChange = (vis) => {
             divVisibility = !divVisibility
             containerButtonsManipulation.style.visibility = "visible" 
         }
-
     }
+}
 
+const addItem = () => {
+    containerAddList.innerHTML += `<p>textItemCompras.value</p>`
 }
 
 
@@ -46,3 +52,4 @@ btnMudaCor.addEventListener("click", mudaCor500)
 btnMostrar.addEventListener("click", () => divChange(1))
 btnOcultar.addEventListener("click",  () => divChange(2))
 btnAlternar.addEventListener("click", () => divChange(3))
+btnAdd.addEventListener("click", addItem)

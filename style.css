@@ -72,3 +72,12 @@ main {
 #container-buttons-manipulation {
     visibility: hidden;
 }
+
+.text-exercicios {
+    background-color: #faebd7b9;
+    width: 150px;
+    height: 30px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.288);
+    border: 0;
+}
